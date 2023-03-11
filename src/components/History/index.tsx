@@ -45,12 +45,15 @@ const History: FC<Props> = ({ messages }) => {
                             
 						) : (
 							<Text>
-                                <Text color="yellow">{msg.from === "user" ? "You: " : "Robot: "}</Text>
-                                {msg.from === "user" ? (
-                                    <Text color="white">{msg.text}</Text>
-                                ) : (
-                                    <Text color="green">{msg.text}{"\n"}</Text>
-                                )}
+                                <Text color="yellow">{msg.from === "user" ? "You: " : (msg.from === "system" ? "System: " : "Robot: ")}</Text>
+                                {
+									msg.from === "user" ? 
+									<Text color="white">{msg.text}</Text> : (
+										msg.from === "system" ?
+										<Text color="red">{msg.text}{"\n"}</Text> :
+										<Text color="green">{msg.text}{"\n"}</Text>
+									)
+                                }
 							</Text>
 						)}
 					</Box>

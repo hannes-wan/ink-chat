@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useEffect, useMemo, useReducer } from "react";
-import { Box, Newline } from "ink";
+import { Box, Newline } from 'ink';
 import History from "./components/History";
 import Query from "./components/Query";
 import { Message, StorageKeys, UIState } from "./types";
@@ -135,8 +135,8 @@ const App: FC<{}> = ({}) => {
 						uiState: UIState.READY,
 					});
 				}
-			} catch (err) {
-				if ((err as any)?.statusCode === 401) {
+			} catch (err: any) {
+				if (err?.statusCode === 401) {
 					console.log('\x1B[31m%s\x1B[0m', 'Check if your API Key is legal!');
 					config.delete(StorageKeys.OPENAI_API_KEY);
 					(global as any).openaiApi = null
@@ -144,7 +144,19 @@ const App: FC<{}> = ({}) => {
 						uiState: UIState.ASK_API_KEY,
 					});
 				} else {
-					console.log("[ERROR]", err);
+					// print error message as system role
+					const answer: Message = {
+						from: "system",
+						id: uuidv4(),
+						text: err?.message,
+						conversationId: prevMessage?.conversationId,
+						parentMessageId: current.id,
+					};
+
+					return setState({
+						messages: [...messages, answer],
+						uiState: UIState.READY,
+					});
 				}
 			}
 
@@ -172,7 +184,7 @@ const App: FC<{}> = ({}) => {
 				break;
 
 			case UIState.READY:
-				render = <Query onSubmit={onSubmitQuery} />;
+				render = <Query onSubmit={onSubmitQuery} />; 
 				break;
 
 			case UIState.WAITING_RESPONSE:
