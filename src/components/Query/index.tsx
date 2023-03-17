@@ -11,10 +11,17 @@ const Query: FC<Props> = ({ onSubmit }) => {
 
 	return (
 		<Box>
-			<Box marginRight={1}>
-				<Text color="gray">[You]:</Text>
-			</Box>
-			<Box>
+			<Box 
+				marginRight={1}
+				borderColor="gray"
+				borderStyle="round"
+				alignSelf="flex-end"
+				width={"100%"}
+				padding={1}
+				paddingRight={2}
+			>
+				<Text color="gray">[You]: </Text>
+
 				<Text color="white">
 					<TextInput 
 						value={query} 
