@@ -20,13 +20,13 @@ const Query: FC<Props> = ({ onSubmit }) => {
 				padding={1}
 				paddingRight={2}
 			>
-				<Text color="gray">[You]: </Text>
 
 				<Text color="white">
 					<TextInput 
 						value={query} 
 						onChange={setQuery} 
 						onSubmit={onSubmit}
+						placeholder={"Input..."}
 					/>
 				</Text>
 			</Box>
