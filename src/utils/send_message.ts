@@ -17,8 +17,9 @@ async function sendMessage(msg: Message) {
             apiKey: openaiApiKey,
 			completionParams: {
 				temperature: temperature,
-				top_p: top_p
-			}
+				top_p: top_p,
+			},
+			maxModelTokens: 8100
         });
 	}
 

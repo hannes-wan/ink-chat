@@ -33,7 +33,7 @@ const History: FC<Props> = ({ messages }) => {
 								<Box>
 									<Text>
 										<Text color="gray">
-											{"[Version]\n1.0.7\n\n[Usage]\n/exit: exit the program\n/reset: reset your API key\n\n[URL]\nhttps://github.com/hannes-wan/ink-chat"}
+											{"[Usage]\n/exit: exit the program\n/reset: reset your API key\n\n[URL]\nhttps://github.com/hannes-wan/ink-chat"}
 										</Text>
 										<Newline/>
 										<Newline/>

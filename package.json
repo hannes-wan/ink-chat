@@ -2,7 +2,7 @@
 	"name": "ink-chat",
 	"author": "hannes_wan",
 	"description": "A terminal ChatGPT tool created by React and Ink",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"license": "MIT",
 	"bin": "dist/cli.js",
 	"engines": {
@@ -18,7 +18,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"chatgpt": "^5.0.6",
+		"chatgpt": "^5.1.1",
 		"ink": "^3.2.0",
 		"ink-big-text": "^1.2.0",
 		"ink-gradient": "^2.0.0",
