@@ -1,8 +1,8 @@
 {
 	"name": "ink-chat",
 	"author": "hannes_wan",
-	"description": "A terminal ChatGPT tool created by React and Ink",
-	"version": "1.1.4",
+	"description": "Terminal ChatGPT created by React and Ink",
+	"version": "1.1.5",
 	"license": "MIT",
 	"bin": "dist/cli.js",
 	"engines": {
@@ -18,7 +18,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"chatgpt": "^5.1.1",
+		"chatgpt": "^5.1.2",
 		"ink": "^3.2.0",
 		"ink-big-text": "^1.2.0",
 		"ink-gradient": "^2.0.0",

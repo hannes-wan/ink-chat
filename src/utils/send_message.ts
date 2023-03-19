@@ -1,25 +1,22 @@
-import { Message, StorageKeys, Setting } from "../types";
+import { Message, StorageKeys} from "../types";
 
 import getConfig from "./get_config";
 
 async function sendMessage(msg: Message) {
-	
+
 	const config = await getConfig();
 
 	if (!(global as any).openaiApi) {
 		const { ChatGPTAPI} = await import("chatgpt");
 
         const openaiApiKey = config.get(StorageKeys.OPENAI_API_KEY);
-		const temperature = config.get(Setting.TEMPERATURE);
-		const top_p = config.get(Setting.TOP_P);
 
         (global as any).openaiApi = new ChatGPTAPI({
             apiKey: openaiApiKey,
 			completionParams: {
-				temperature: temperature,
-				top_p: top_p,
+				temperature: 1,
+				top_p: 1,
 			},
-			maxModelTokens: 8100
         });
 	}
 

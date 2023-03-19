@@ -2,7 +2,7 @@ import React, { FC, useCallback, useEffect, useMemo, useReducer } from "react";
 import { Box, Newline } from 'ink';
 import History from "./components/History";
 import Query from "./components/Query";
-import { Message, StorageKeys, UIState } from "./types";
+import {Message, StorageKeys, UIState} from "./types";
 import sendMessage from "./utils/send_message";
 import getConfig from "./utils/get_config";
 import Waiting from "./components/Waiting";
@@ -16,7 +16,7 @@ type State = {
 	messages: Message[];
 };
 
-const App: FC<{}> = ({}) => {
+const App: FC = ({}) => {
 	const [state, setState] = useReducer(
 		(state: State, newState: Partial<State>) => ({
 			...state,

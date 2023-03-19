@@ -3,7 +3,6 @@ export enum UIState {
 	ASK_API_KEY,
 	READY,
 	WAITING_RESPONSE,
-	SHOWING_RESPONSE,
 }
 
 export type Message = {
@@ -14,17 +13,6 @@ export type Message = {
 	parentMessageId?: string;
 };
 
-export enum Colors {
-	USER = "green",
-	AI = "magenta",
-	AI_GRADIENT = "retro",
-}
-
 export enum StorageKeys {
 	OPENAI_API_KEY = "OPENAI_API_KEY",
-}
-
-export enum Setting {
-	TEMPERATURE = "1",
-	TOP_P = "1"
 }
