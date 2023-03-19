@@ -17,9 +17,9 @@ const History: FC<Props> = ({ messages }) => {
 		<Box flexDirection="column">
 			<Static items={messagesWithHeader}>
 				{(msg, index) => (
-					<Box 
-						key={index} 
-						flexDirection="row" 
+					<Box
+						key={index}
+						flexDirection="row"
 						width="100%">
 
 						{index === 0 ? (
@@ -33,7 +33,7 @@ const History: FC<Props> = ({ messages }) => {
 								<Box>
 									<Text>
 										<Text color="gray">
-											{"[Usage]\n/exit: exit the program\n/reset: reset your API key\n\n[URL]\nhttps://github.com/hannes-wan/ink-chat"}
+											{"[Usage]\nexit: exit the program\nreset: reset your API key\n\n[URL]\nhttps://github.com/hannes-wan/ink-chat"}
 										</Text>
 										<Newline/>
 										<Newline/>
@@ -42,12 +42,12 @@ const History: FC<Props> = ({ messages }) => {
 									</Text>
 								</Box>
 							</Box>
-                            
+
 						) : (
 							<Text>
                                 <Text color="yellow">{msg.from === "user" ? "You: " : (msg.from === "system" ? "System: " : "Robot: ")}</Text>
                                 {
-									msg.from === "user" ? 
+									msg.from === "user" ?
 									<Text color="white">{msg.text}</Text> : (
 										msg.from === "system" ?
 										<Text color="red">{msg.text}{"\n"}</Text> :

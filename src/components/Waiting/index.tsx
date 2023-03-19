@@ -5,10 +5,10 @@ import Spinner from "ink-spinner";
 const Waiting: FC = () => {
 	return (
 		<Box>
-			<Box 
+			<Box
 				marginRight={1}
 				borderColor="gray"
-				borderStyle="round"
+				borderStyle="classic"
 				alignSelf="flex-end"
 				width={"100%"}
 				padding={1}

@@ -49,7 +49,7 @@ const App: FC<{}> = ({}) => {
 	const onSubmitToken = useCallback(
 		(storageKey: StorageKeys) => async (token: string) => {
 
-			if (token === "/exit") 
+			if (token === "exit")
 				process.exit(0)
 
 			const config = await getConfig();
@@ -88,11 +88,11 @@ const App: FC<{}> = ({}) => {
 	const onSubmitQuery = useCallback(
 		async (text: string) => {
 			const config = await getConfig();
-			
-			if (text === "/exit") 
+
+			if (text === "exit")
 				process.exit(0)
 
-			if (text === "/reset") {
+			if (text === "reset") {
 				const config = await getConfig();
 				config.delete(StorageKeys.OPENAI_API_KEY);
 				(global as any).openaiApi = null
@@ -100,7 +100,7 @@ const App: FC<{}> = ({}) => {
 					uiState: UIState.ASK_API_KEY,
 				});
 			}
-			
+
 			const prevMessage = state.messages.at(-1);
 
 			const current: Message = {
@@ -184,13 +184,13 @@ const App: FC<{}> = ({}) => {
 				break;
 
 			case UIState.READY:
-				render = <Query onSubmit={onSubmitQuery} />; 
+				render = <Query onSubmit={onSubmitQuery} />;
 				break;
 
 			case UIState.WAITING_RESPONSE:
 				render = <Waiting />;
 				break;
-				
+
 			default:
 				break;
 		}
