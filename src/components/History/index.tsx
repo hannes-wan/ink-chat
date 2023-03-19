@@ -37,7 +37,7 @@ const History: FC<Props> = ({ messages }) => {
 										</Text>
 										<Newline/>
 										<Newline/>
-										<Text color="yellow">{"Robot: "}</Text>
+										<Text color="yellow">{"👽 "}</Text>
 										<Text color="green">{"Welcome to ink-chat!\n"}</Text>
 									</Text>
 								</Box>
@@ -45,7 +45,7 @@ const History: FC<Props> = ({ messages }) => {
 
 						) : (
 							<Text>
-                                <Text color="yellow">{msg.from === "user" ? "You: " : (msg.from === "system" ? "System: " : "Robot: ")}</Text>
+                                <Text color="yellow">{msg.from === "user" ? "👤 " : (msg.from === "system" ? "👻 " : "👽 ")}</Text>
                                 {
 									msg.from === "user" ?
 									<Text color="white">{msg.text}</Text> : (

@@ -177,7 +177,7 @@ const App: FC<{}> = ({}) => {
 			case UIState.ASK_API_KEY:
 				render = (
 					<Input
-						message="Enter your OpenAI API Key: "
+						message="Enter your OpenAI API Key"
 						onSubmit={onSubmitToken(StorageKeys.OPENAI_API_KEY)}
 					/>
 				);
